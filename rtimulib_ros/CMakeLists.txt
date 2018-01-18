@@ -4,14 +4,7 @@ project(rtimulib_ros)
 find_package(catkin REQUIRED COMPONENTS
   roscpp
   sensor_msgs
-)
-
-INCLUDE_DIRECTORIES(
-			/home/nvidia/RTIMULib2/RTIMULib
-			/home/nvidia/RTIMULib2/RTIMULib/IMUDrivers
-)
-LINK_DIRECTORIES(
-			/home/nvidia/RTIMULib2/RTIMULib/build
+  rtimulib
 )
 
 catkin_package(
@@ -27,5 +20,5 @@ add_executable(rtimulib_ros src/rtimulib_ros.cpp)
 
 target_link_libraries(rtimulib_ros
   ${catkin_LIBRARIES}
-  RTIMULib
+  rtimulib
 )
